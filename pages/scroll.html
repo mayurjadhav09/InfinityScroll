@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../style/scroll.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Infinity</title>
+</head>
+<body>
+<div id="container">
+    <h1>Masai Scrolling Effect</h1>
+    <div id="mainContainer" >
+
+    </div>
+</div>
+    
+</body>
+</html>
+<script>
+  var mainContainer= document.querySelector("#mainContainer")
+let topBtn=document.querySelector("#topBtn")
+  
+  var value=1
+   let scrolling=()=>{
+        for(var i=0; i<25; i++){
+           var content= document.createElement("div")
+           content.setAttribute("class","innerDiv")
+           var line = document.createElement("li")
+           line.innerText="Masai School "+value++;
+           content.appendChild(line)
+           mainContainer.append(content)
+        }
+      
+    }
+
+    mainContainer.addEventListener("scroll",function(){
+        if(mainContainer.scrollTop +mainContainer.clientHeight>=mainContainer.scrollHeight){
+            scrolling()
+        }
+   
+
+    })
+    scrolling()
+
+
+
+
+
+
+
+
+   
+</script>
